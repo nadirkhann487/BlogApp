@@ -3,10 +3,10 @@
 	<h2 class="title"><%= link_to post.name,post %></h2>
 	<div class="entry"><%= post.body %></div>
 	<div class="byline">
-          <p class="meta">May 07, 2012 Posted by <a href="#">Someone</a></p>
-          <p class="links"><a href="post.html">Read More</a> BLAH BLAH BLAH</p>
+         <p><%= post.created_at.strftime("%b %d. %Y") %>
+		Created By : <%= post.admin_user.name %></p>
     </div>
 </div>
 <% end.empty? %>
-	<p style="color:#ffffff;">Sorry, there are no posts in this category</p>
+	<p style="color:#ffffff">Sorry, there are no posts in this category</p>
 <% end %>
